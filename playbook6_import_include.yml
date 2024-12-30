@@ -1,0 +1,14 @@
+---
+- name: playbook6
+  hosts: all
+  become: yes
+
+  vars:
+    mytext: "Privet ot ST"
+
+  tasks:
+  - include_tasks: create_folders.yml
+
+  - include_tasks: create_files.yml
+    vars:
+      mytext: "Hello, this is our variable value"   # передаем свое значение переменной по умолчанию
